@@ -35,11 +35,12 @@ resources = {"water": 300,
 
 
 def resource_enough(choice, source):
+    is_enough = True
     for item in choice:
         if source[item] < choice[item]:
             print(f"Sorry there is not enough {item}")
-            return False
-    return True
+            is_enough = False
+    return is_enough
 
 
 def calculate_money(choice):
